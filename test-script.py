@@ -1,3 +1,6 @@
 import os
 print("Test script run")
-print(os.environ['EXAMPLE_SECRET'])
+secret_value = os.environ['EXAMPLE_SECRET']
+
+if secret_value == 'EXAMPLE_SECRET_VALUE':
+    print('SECRET VALUE GATHERED SUCCESSFULLY')
