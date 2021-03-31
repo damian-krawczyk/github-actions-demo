@@ -69,4 +69,9 @@ for article_item in article_list:
             print("Message sending error\n")
 
 if not warnings:
-    print(f"No warnings for {yesterday}")
+    info = f"Brak ostrzeżeń na dzień {yesterday}"
+    info_en = translator.translate(info)
+    message = f"{info}\n{info_en}"
+    print(message)
+
+    bot.send_message('@DamianTestChannel',text=message, parse_mode='Markdown')
