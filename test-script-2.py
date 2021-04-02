@@ -38,7 +38,7 @@ for number, value in enumerate(article_urls):
     if value.parent.name == 'li':
         article_list[number].update({"url": "https://www.gov.pl"+value['href']}) 
 
-yesterday = datetime.datetime.today() - datetime.timedelta(days=1)
+yesterday = datetime.datetime.today() - datetime.timedelta(days=0)
 yesterday = yesterday.strftime("%Y-%m-%d")
 
 translator= Translator(from_lang="polish",to_lang="english")
