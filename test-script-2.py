@@ -64,6 +64,8 @@ for article_item in article_list:
 
         try:
             bot.send_message('@DamianTestChannel',text=message, parse_mode='Markdown')
+            bot.send_message('@msi_pl_warnings',text=message, parse_mode='Markdown')
+            bot.send_message('@gis_pl_ostrzezenia',text=message, parse_mode='Markdown')
             print("Message send successfully\n")
         except:
             print("Message sending error\n")
