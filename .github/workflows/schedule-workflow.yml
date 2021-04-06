@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      TEST_CHANNEL_URL: @DamianTestChannel
+      TEST_CHANNEL_URL: "@DamianTestChannel"
 
     steps:
       - uses: actions/checkout@v2
