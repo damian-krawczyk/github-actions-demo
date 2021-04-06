@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    name: Koronawirus Wiadomości
     env:
       TEST_CHANNEL_URL: "@DamianTestChannel"
 
@@ -22,7 +22,7 @@ jobs:
           python-version: 3.8
       - name: install requirements
         run: pip install -r requirements.txt
-      - name: Koronawirus Wiadomości
+      - name: python script run
         run: |
           python test-script-3.py
         env:
@@ -32,7 +32,22 @@ jobs:
           FEED_URL: https://www.gov.pl/web/koronawirus/wiadomosci
           CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
           TEST_CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
-      - name: Koronawirus Działania rządu
+  build:
+    runs-on: ubuntu-latest
+    name: Koronawirus Działania rządu
+    env:
+      TEST_CHANNEL_URL: "@DamianTestChannel"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: install requirements
+        run: pip install -r requirements.txt
+      - name: python script run
         run: |
           python test-script-3.py
         env:
@@ -42,7 +57,22 @@ jobs:
           FEED_URL: https://www.gov.pl/web/koronawirus/dzialania-rzadu
           CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
           TEST_CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
-      - name: GIF Komunikaty
+  build:
+    runs-on: ubuntu-latest
+    name: GIF Komunikaty
+    env:
+      TEST_CHANNEL_URL: "@DamianTestChannel"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: install requirements
+        run: pip install -r requirements.txt
+      - name: python script run
         run: |
           python test-script-3.py
         env:
@@ -52,7 +82,22 @@ jobs:
           FEED_URL: https://www.gov.pl/web/gif/komunikaty
           CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
           TEST_CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
-      - name: GIS Ostrzeżenia
+  build:
+    runs-on: ubuntu-latest
+    name: GIS Ostrzeżenia
+    env:
+      TEST_CHANNEL_URL: "@DamianTestChannel"
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - name: install requirements
+        run: pip install -r requirements.txt
+      - name: python script run
         run: |
           python test-script-3.py
         env:
