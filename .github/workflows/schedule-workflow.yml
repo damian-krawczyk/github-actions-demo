@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build_koronawirus_wiadomosci:
     runs-on: ubuntu-latest
     name: Koronawirus Wiadomości
     env:
@@ -32,7 +32,7 @@ jobs:
           FEED_URL: https://www.gov.pl/web/koronawirus/wiadomosci
           CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
           TEST_CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
-  build:
+  build_koronawirus_dzialania_rzadu:
     runs-on: ubuntu-latest
     name: Koronawirus Działania rządu
     env:
@@ -57,7 +57,7 @@ jobs:
           FEED_URL: https://www.gov.pl/web/koronawirus/dzialania-rzadu
           CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
           TEST_CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
-  build:
+  build_gif_komunikaty:
     runs-on: ubuntu-latest
     name: GIF Komunikaty
     env:
@@ -82,7 +82,7 @@ jobs:
           FEED_URL: https://www.gov.pl/web/gif/komunikaty
           CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
           TEST_CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
-  build:
+  build_gis_ostrzezenia:
     runs-on: ubuntu-latest
     name: GIS Ostrzeżenia
     env:
