@@ -29,6 +29,7 @@ jobs:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           GIVEN_DATE: today
           FEED_NAME: Koronawirus Działania rządu
+          ARTICLE_TYPE: Działanie rządu
           FEED_URL: https://www.gov.pl/web/koronawirus/dzialania-rzadu
           CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
           TEST_CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
