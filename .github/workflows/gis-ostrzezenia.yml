@@ -12,7 +12,7 @@ jobs:
     name: GIS Ostrzeżenia
     env:
       TEST_CHANNEL_URL: "@DamianTestChannel"
-
+      CHANNEL_URL: "@gpi_gis_ostrzezenia"
     steps:
       - uses: actions/checkout@v2
 
@@ -27,9 +27,9 @@ jobs:
           python test-script-3.py
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          GIVEN_DATE: 2021-04-02
+          GIVEN_DATE: today
           FEED_NAME: GIS Ostrzeżenia
           ARTICLE_TYPE: Ostrzeżenie
           FEED_URL: https://www.gov.pl/web/gis/ostrzezenia
-          CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
+          CHANNEL_URL: ${{ env.CHANNEL_URL }}
           TEST_CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
