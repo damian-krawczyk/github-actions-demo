@@ -83,11 +83,15 @@ def send_message(article, feed_name, channel, test_channel, token):
         date = article['date']
         title = article['title']
         title_en = translator.translate(title)
-        intro = article['intro']
-        intro_en = translator.translate(intro)
         url = article['url']
 
-        message = f"`{date}`\n**PL:** {title}\n\n{intro}\n---\n**EN:** {title_en}\n\n{intro_en}\n---\n[Szczegóły / Details]({url})"
+        if intro:
+            intro = article['intro']
+            intro_en = translator.translate(intro)
+            message = f"`{date}`\n**PL:** {title}\n\n{intro}\n---\n**EN:** {title_en}\n\n{intro_en}\n---\n[Szczegóły / Details]({url})"
+        else:
+            message = f"`{date}`\n**PL:** {title}\n---\n**EN:** {title_en}\n---\n[Szczegóły / Details]({url})"
+        
         print(message)
         bot.send_message(channel,text=message, parse_mode='Markdown')
 
