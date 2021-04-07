@@ -4,8 +4,8 @@ from bs4 import BeautifulSoup, SoupStrainer
 import datetime
 import os
 import telegram
-from translate import Translator
 import dateparser
+import goslate
 
 def get_articles(url, date=None):
 
@@ -68,13 +68,13 @@ def get_articles(url, date=None):
     return article_list
 
 def send_message(article, feed_name, article_type, channel, test_channel, token):
-    translator= Translator(from_lang="polish",to_lang="english")
+    gs = goslate.Goslate()
 
     bot = telegram.Bot(token=token)
 
     if 'warning' in article:
         info = article['warning']
-        info_en = translator.translate(info)
+        info_en = gs.translate(info,'en')
         message = f"{feed_name}\n{info}\n{info_en}"
         print(message)
         bot.send_message(test_channel,text=message, parse_mode='Markdown')
@@ -84,7 +84,7 @@ def send_message(article, feed_name, article_type, channel, test_channel, token)
         print(f'date: {date}')
         title = article['title']
         print(f'title: {title}')
-        title_en = translator.translate(title)
+        title_en = gs.translate(title,'en')
         print(f'title en: {title_en}')
         url = article['url']
         print(f'url: {url}')
@@ -92,7 +92,7 @@ def send_message(article, feed_name, article_type, channel, test_channel, token)
         intro = article['intro']
         print(f'intro: {intro}')
         if intro:
-            intro_en = translator.translate(intro)
+            intro_en = gs.translate(intro,'en')
             print(f'intro en: {intro_en}')
             message = f"`{date}` - {article_type}\n**PL:** {title}\n\n{intro}\n---\n**EN:** {title_en}\n\n{intro_en}\n---\n[Szczegóły / Details]({url})"
         else:
