@@ -85,8 +85,8 @@ def send_message(article, feed_name, channel, test_channel, token):
         title_en = translator.translate(title)
         url = article['url']
 
+        intro = article['intro']
         if intro:
-            intro = article['intro']
             intro_en = translator.translate(intro)
             message = f"`{date}`\n**PL:** {title}\n\n{intro}\n---\n**EN:** {title_en}\n\n{intro_en}\n---\n[Szczegóły / Details]({url})"
         else:
