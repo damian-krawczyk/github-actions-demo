@@ -12,7 +12,7 @@ jobs:
     name: Koronawirus Działania rządu
     env:
       TEST_CHANNEL_URL: "@DamianTestChannel"
-
+      CHANNEL_URL: "@gpi_koronawirus"
     steps:
       - uses: actions/checkout@v2
 
@@ -31,5 +31,5 @@ jobs:
           FEED_NAME: Koronawirus Działania rządu
           ARTICLE_TYPE: Działanie rządu
           FEED_URL: https://www.gov.pl/web/koronawirus/dzialania-rzadu
-          CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
+          CHANNEL_URL: ${{ env.CHANNEL_URL }}
           TEST_CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}

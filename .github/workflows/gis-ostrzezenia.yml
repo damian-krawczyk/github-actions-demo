@@ -12,7 +12,7 @@ jobs:
     name: GIS Ostrzeżenia
     env:
       TEST_CHANNEL_URL: "@DamianTestChannel"
-      CHANNEL_URL: "@gpi_gis_ostrzezenia"
+      CHANNEL_URL: "@gpi_gis"
     steps:
       - uses: actions/checkout@v2
 

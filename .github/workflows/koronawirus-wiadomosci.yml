@@ -12,7 +12,7 @@ jobs:
     name: Koronawirus Wiadomości
     env:
       TEST_CHANNEL_URL: "@DamianTestChannel"
-
+      CHANNEL_URL: "@gpi_koronawirus"
     steps:
       - uses: actions/checkout@v2
 
@@ -31,5 +31,5 @@ jobs:
           FEED_NAME: Koronawirus Wiadomości
           ARTICLE_TYPE: Wiadomość
           FEED_URL: https://www.gov.pl/web/koronawirus/wiadomosci
-          CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
+          CHANNEL_URL: ${{ env.CHANNEL_URL }}
           TEST_CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}

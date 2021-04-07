@@ -12,7 +12,7 @@ jobs:
     name: GIF Wiadomości
     env:
       TEST_CHANNEL_URL: "@DamianTestChannel"
-
+      CHANNEL_URL: "@gpi_gif"
     steps:
       - uses: actions/checkout@v2
 
@@ -31,5 +31,5 @@ jobs:
           FEED_NAME: GIF Wiadomości
           ARTICLE_TYPE: Wiadomość
           FEED_URL: https://www.gov.pl/web/gif/wiadomosci
-          CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
+          CHANNEL_URL: ${{ env.CHANNEL_URL }}
           TEST_CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
