@@ -67,7 +67,7 @@ def get_articles(url, date=None):
 
     return article_list
 
-def send_message(article, feed_name, channel, test_channel, token):
+def send_message(article, feed_name, article_type, channel, test_channel, token):
     translator= Translator(from_lang="polish",to_lang="english")
 
     bot = telegram.Bot(token=token)
@@ -88,9 +88,9 @@ def send_message(article, feed_name, channel, test_channel, token):
         intro = article['intro']
         if intro:
             intro_en = translator.translate(intro)
-            message = f"`{date}`\n**PL:** {title}\n\n{intro}\n---\n**EN:** {title_en}\n\n{intro_en}\n---\n[Szczegóły / Details]({url})"
+            message = f"`{date}` - {article_type}\n**PL:** {title}\n\n{intro}\n---\n**EN:** {title_en}\n\n{intro_en}\n---\n[Szczegóły / Details]({url})"
         else:
-            message = f"`{date}`\n**PL:** {title}\n---\n**EN:** {title_en}\n---\n[Szczegóły / Details]({url})"
+            message = f"`{date}` - {article_type}\n**PL:** {title}\n---\n**EN:** {title_en}\n---\n[Szczegóły / Details]({url})"
         
         print(message)
         bot.send_message(channel,text=message, parse_mode='Markdown')
@@ -99,6 +99,7 @@ def send_message(article, feed_name, channel, test_channel, token):
 url = os.environ['FEED_URL']
 given_date = dateparser.parse(os.environ['GIVEN_DATE'], date_formats=["%Y-%m-%d"]).strftime("%Y-%m-%d")
 feed_name = os.environ['FEED_NAME']
+article_type = os.environ['ARTICLE_TYPE']
 channel = os.environ['CHANNEL_URL']
 test_channel = os.environ['TEST_CHANNEL_URL']
 token = os.environ['TELEGRAM_TOKEN']
@@ -107,4 +108,4 @@ article_list = get_articles(url, given_date)
 
 for article in article_list:
     # print(article,"\n")
-    send_message(article, feed_name, channel, test_channel, token)
+    send_message(article, feed_name, article_type, channel, test_channel, token)

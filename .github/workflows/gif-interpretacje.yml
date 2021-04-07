@@ -29,6 +29,7 @@ jobs:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           GIVEN_DATE: today
           FEED_NAME: GIF Interpretacje
+          ARTICLE_TYPE: Interpretacja
           FEED_URL: https://www.gov.pl/web/gif/interpretacje
           CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
           TEST_CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
