@@ -81,13 +81,19 @@ def send_message(article, feed_name, article_type, channel, test_channel, token)
 
     else:
         date = article['date']
+        print(f'date: {date}')
         title = article['title']
+        print(f'title: {title}')
         title_en = translator.translate(title)
+        print(f'title en: {title_en}')
         url = article['url']
+        print(f'url: {url}')
 
         intro = article['intro']
+        print(f'intro: {intro}')
         if intro:
             intro_en = translator.translate(intro)
+            print(f'intro en: {intro_en}')
             message = f"`{date}` - {article_type}\n**PL:** {title}\n\n{intro}\n---\n**EN:** {title_en}\n\n{intro_en}\n---\n[Szczegóły / Details]({url})"
         else:
             message = f"`{date}` - {article_type}\n**PL:** {title}\n---\n**EN:** {title_en}\n---\n[Szczegóły / Details]({url})"
