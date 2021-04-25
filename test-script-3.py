@@ -94,9 +94,9 @@ def send_message(article, feed_name, article_type, channel, test_channel, token)
         if intro:
             intro_en = gs.translate(intro,'en')
             print(f'intro en: {intro_en}')
-            message = f"`{date}` - {article_type}\n**PL:** {title}\n\n{intro}\n---\n**EN:** {title_en}\n\n{intro_en}\n---\n[Szczegóły / Details]({url})"
+            message = f"`@like {date}` - {article_type}\n**PL:** {title}\n\n{intro}\n---\n**EN:** {title_en}\n\n{intro_en}\n---\n[Szczegóły / Details]({url})"
         else:
-            message = f"`{date}` - {article_type}\n**PL:** {title}\n---\n**EN:** {title_en}\n---\n[Szczegóły / Details]({url})"
+            message = f"`@like {date}` - {article_type}\n**PL:** {title}\n---\n**EN:** {title_en}\n---\n[Szczegóły / Details]({url})"
         
         print(message)
         bot.send_message(channel,text=message, parse_mode='Markdown')
