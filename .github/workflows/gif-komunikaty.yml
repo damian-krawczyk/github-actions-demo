@@ -28,7 +28,7 @@ jobs:
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           GIVEN_DATE: today
-          FEED_NAME: \#GIF Komunikaty
+          FEED_NAME: #GIF Komunikaty
           ARTICLE_TYPE: Komunikat
           FEED_URL: https://www.gov.pl/web/gif/komunikaty
           CHANNEL_URL: ${{ env.TEST_CHANNEL_URL }}
